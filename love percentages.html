@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Love Calculator</title>
+  
+  
+  <style type="text/css">
+*{margin:0;
+padding:0;
+box-sizing:border-box}
+
+body{background:url('images.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.main{
+height:290px;
+width:230px;
+border:2px solid #FF00FF;
+box-shadow:1px 1px 2px #1E90FF;
+margin:12px auto;
+text-align:center;
+padding:10px 0px;
+}
+h3{
+border-bottom:2px dashed #9400D3;
+display:inline;
+color:DarkBlue;
+text-shadow:1px 1px 2px #7B68EE;
+font-weight:bold;
+}
+input{margin-top:20px;}
+button{margin-top:20px;
+height:30px;
+width:120px;
+font-size:17px;
+font-weight:bold;
+text-shadow:1px 1px 2px #40E0D0;
+background:green;
+color:#fff;
+border:none;
+outline:none;
+border-radius:3px}
+button:active{opacity:0.5}
+
+.inputField{
+height:30px;
+border:2px solid blue;
+border-radius:4px;
+box-shadow:1px 1px 2px #800080;
+padding:4px;
+outline:none;
+font-weight:bold;
+}
+.lovesName{
+font-weight:bold;
+color:red
+}
+
+.text{color:red}
+
+.result{
+font-weight:bold;
+font-size:20px;
+color:#008B8B;
+text-shadow:1px 1px 2px #000000;
+}
+
+
+#wish{
+font-size:12px;
+color:#00FFFF;
+font-weight: bold;}
+
+</style>
+</head>
+<body>
+  
+  
+  <div class="main">
+    <h3>Love Calculate</h3>
+    <input class="inputField" type="text" id="firstField" placeholder="Your Name">
+    <input class="inputField" type="text" id="secondField" placeholder="Love Name">
+    <button onclick="calc()">Calculate</button>
+    <p class="lovesName" id="loversName"></p>
+    <p class="text" id="text"></p>
+    <p class="result" id="result"></p>
+    <p></p>
+      <p></p>
+        <p></p>
+    <p id="wish"></p>
+  </div>
+ 
+ 
+<script type="text/javascript">
+
+function calc(){
+var firstField = document.getElementById('firstField');
+var secondField = document.getElementById('secondField');
+var yourName = firstField.value;
+var loveName = secondField.value;
+var result = document.getElementById('result');
+var loversName = document.getElementById('loversName');
+var text = document.getElementById('text');
+var wish = document.getElementById('wish');
+var randomNumber = Math.random()*100;
+var loveValue = Math.floor(randomNumber)+1;
+
+if(yourName == ""){
+   result.innerHTML="Please Enter Your Names..!"
+   }
+else if(yourName.length <=2){
+   result.innerHTML="Minimum Character is 3..!"
+   }
+else if(!isNaN(yourName)){
+   result.innerHTML="Number is not allow..!"
+   }
+else if(loveName == ""){
+   result.innerHTML="Please Enter Your Loves Names..!"
+   }
+else if(loveName.length <=2){
+   result.innerHTML="Minimum Character is 3..!"
+   }
+else if(!isNaN(loveName)){
+   result.innerHTML="Number is not allow..!"
+   }
+else{
+   loversName.innerHTML=yourName + " + "+loveName+"'s";
+   text.innerHTML="love percentages is :-";
+   result.innerHTML=loveValue+"%";
+   wish.innerHTML="Best Wishes for your relationship! "
+}
+}
+
+
+
+
+</script>
+</body>
+</html>
